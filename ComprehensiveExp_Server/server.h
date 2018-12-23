@@ -3,12 +3,14 @@
 
 #include <QObject>
 #include <QHash>
+#include <QHostAddress>
 
 class Server : public QObject
 {
     Q_OBJECT
 
     struct client{
+         QHostAddress ip;
          quint16 listenport;
          class QTcpSocket* socket;
     };

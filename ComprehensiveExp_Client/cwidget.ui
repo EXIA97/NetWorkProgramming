@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>411</width>
-    <height>300</height>
+    <width>552</width>
+    <height>340</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Client</string>
@@ -17,7 +23,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
+     <y>40</y>
      <width>201</width>
      <height>301</height>
     </rect>
@@ -42,10 +48,84 @@
    <property name="geometry">
     <rect>
      <x>200</x>
-     <y>0</y>
-     <width>211</width>
+     <y>40</y>
+     <width>471</width>
      <height>301</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>0</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>0</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>登陆</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Arabic</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>用户名</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::RichText</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>0</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送文件</string>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>310</y>
+     <width>118</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
    </property>
   </widget>
  </widget>

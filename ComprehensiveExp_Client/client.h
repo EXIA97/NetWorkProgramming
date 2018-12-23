@@ -3,15 +3,18 @@
 
 #include <QHash>
 #include <QObject>
+#include <QHostAddress>
+#include <QString>
 
 
 class Client : public QObject
 {
     Q_OBJECT
 public:
-    explicit Client(QObject *parent = nullptr);
+    explicit Client(QObject *parent = nullptr,QString name = nullptr);
 
     struct client{
+         QHostAddress ip;
          quint16 listenport;
          class QTcpSocket* socket;
     };
@@ -19,13 +22,16 @@ public:
 private:
     QHash<QString,client> _clients;
 
+    QString username;
+
     class QTcpSocket* _socket;
     class QTcpServer* _server;
 
     static const int TYPE_ADD = 0x4141;
     static const int TYPE_DEL = 0x4142;
+    static const int TYPE_MESSAGE = 0x4143;
+    static const int TYPE_FILE = 0x4144;
 
-private:
 
 signals:
     void NewMessageReceive(QString message);
@@ -34,6 +40,8 @@ signals:
 
 
 public slots:
+    void ConnectToServer(QString username);
+
     void OnConnectedServer();
     void OnReadyReadServer();
     void OnDisConnectedServer();
@@ -42,6 +50,8 @@ public slots:
 
     void SendMessageToPeerClient(QString key,QString message);
     void OnReceiveMessageFromClient();
+
+    void SendFileToPeerClient(QString key, QString filename);
 
 };
 

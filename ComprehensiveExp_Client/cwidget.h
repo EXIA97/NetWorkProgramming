@@ -2,7 +2,6 @@
 #define CWIDGET_H
 
 #include <QWidget>
-#include <loginwidget.h>
 
 namespace Ui {
 class CWidget;
@@ -21,19 +20,22 @@ private:
 
 signals:
     void SendMessage(QString key,QString message);
+    void TryToConnect(QString username);
+    void SendFile(QString key,QString file);
 
 public slots:
     void OnClientAdd(QString key);
     void OnClientDel(QString key);
     void OnButtonClick();
     void OnReceiveMessage(QString message);
-    void Login(QString username);
+    void Login();
+    void SendFileClick();
 
 private:
     Ui::CWidget *ui;
     QString history;
     class Client* client;
-    Ui::LoginWidget *loginui;
+    QString file;
 };
 
 #endif // CWIDGET_H
